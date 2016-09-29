@@ -1,0 +1,33 @@
+"items" : [ {
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/artist/3WfJ1OtrWI7RViX9DMyEGy"
+    },
+    "followers" : {
+      "href" : null,
+      "total" : 480237
+    },
+    "genres" : [ "emo", "pop emo", "pop punk", "screamo" ],
+    "href" : "https://api.spotify.com/v1/artists/3WfJ1OtrWI7RViX9DMyEGy",
+    "id" : "3WfJ1OtrWI7RViX9DMyEGy",
+    "images" : [ {
+      "height" : 667,
+      "url" : "https://i.scdn.co/image/ad468f767287782af990280b01f2a99867f9b7f1",
+      "width" : 1000
+    }, {
+      "height" : 427,
+      "url" : "https://i.scdn.co/image/3bf4b870de460a6b78bc9270a94787f337369d74",
+      "width" : 640
+    }, {
+      "height" : 133,
+      "url" : "https://i.scdn.co/image/f114b878a529f1c6103f68fd5cdde5394569545b",
+      "width" : 200
+    }, {
+      "height" : 43,
+      "url" : "https://i.scdn.co/image/d2616a65675a7fc948a16bae887f6fa3cf90d8b5",
+      "width" : 64
+    } ],
+    "name" : "Mayday Parade",
+    "popularity" : 66,
+    "type" : "artist",
+    "uri" : "spotify:artist:3WfJ1OtrWI7RViX9DMyEGy"
+  },
