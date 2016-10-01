@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { AppBar, Drawer, MenuItem } from 'material-ui'
 import MainFooter from './MainFooter'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 
 class App extends Component {
 
@@ -24,7 +26,8 @@ class App extends Component {
     },
     main: {
       flex: '1',
-      display: 'flex'
+      display: 'flex',
+      width: '100%'
     }
   }
 
@@ -48,7 +51,7 @@ class App extends Component {
 
   render () {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div className='app' style={this.styles.app}>
           <AppBar
             title='Music Lovers'
@@ -64,8 +67,8 @@ class App extends Component {
             onRequestChange={this.changeDrawer}
             docked={false}
           >
-            <MenuItem onTouchTap={this.handleMenu}>Menu Item</MenuItem>
-            <MenuItem onTouchTap={this.handleMenu}>Menu Item2</MenuItem>
+            <MenuItem onTouchTap={this.handleMenu}>Home</MenuItem>
+            <MenuItem onTouchTap={this.handleMenu}>Selections</MenuItem>
           </Drawer>
         </div>
       </MuiThemeProvider>

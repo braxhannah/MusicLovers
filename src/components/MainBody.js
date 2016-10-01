@@ -3,6 +3,8 @@ import { browserHistory } from 'react-router'
 import { RaisedButton } from 'material-ui'
 import spacing from 'material-ui/styles/spacing'
 
+let imgUrl = 'src/images/flute-1427652_1920.jpg'
+
 class MainBody extends Component {
 
   constructor () {
@@ -25,7 +27,10 @@ class MainBody extends Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      flex: '1'
+      flex: '1',
+      backgroundImage: 'url(' + imgUrl + ')',
+      backgroundSize: 'cover',
+      overflow: 'hidden'
     },
     button: {
       margin: spacing.desktopGutterMini
@@ -43,15 +48,3 @@ class MainBody extends Component {
 }
 
 export default MainBody
-
-// class App extends Component {
-//   constructor () {
-//     super()
-//     this.state = {
-//       currentScreen: 'AlbumsDisplayed',
-
-// different body displays (want to switch these based)
-// 1.UserInput
-// 2.MainPage
-// 3.ConcertSuggestions
-// 4.DatingSuggestions

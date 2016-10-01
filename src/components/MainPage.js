@@ -7,6 +7,8 @@ import { Tabs, Tab } from 'material-ui/Tabs'
 import DatingSuggestions from './DatingSuggestions'
 import ConcertSuggestions from './ConcertSuggestions'
 
+let imgUrl = 'src/images/concerts-1150042_1280.jpg'
+
 class MainPage extends Component {
 
   styles = {
@@ -14,7 +16,13 @@ class MainPage extends Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      flex: '1'
+      flex: '1',
+      width: '100vw'
+    },
+    backgroundPicture: {
+      backgroundImage: 'url(' + imgUrl + ')',
+      backgroundSize: 'cover',
+      overflow: 'hidden'
     },
     headline: {
       fontSize: 24,
@@ -24,7 +32,6 @@ class MainPage extends Component {
     },
     button: {
       margin: spacing.desktopGutterMini
-      // background: url('images/pexels-photo.jpg');
     },
     test: {
       backgroundColor: '#18FFFF'
@@ -46,12 +53,12 @@ class MainPage extends Component {
 
   render () {
     return (
-      <Tabs value={this.state.value} onChange={this.handleChange}>
-        <Tab label='Concert Suggestions' value='concert'>
-          Dating Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <Tabs value={this.state.value} styles={this.styles.backgroundPicture} onChange={this.handleChange}>
+        <Tab label='Concert Suggestions' value='concert' >
+          <ConcertSuggestions />
         </Tab>
-        <Tab label='Dating Suggestions' value='dating'>
-          Concert Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <Tab label='Dating Suggestions' value='dating' >
+          <DatingSuggestions />
         </Tab>
       </Tabs>
     )

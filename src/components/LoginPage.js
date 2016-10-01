@@ -14,13 +14,10 @@ class LoginPage extends Component {
   render () {
     return (
       <Paper zDepth={2}>
-        <TextField hintText='First name' style={this.styles.Divider} underlineShow={false} />
+        <TextField hintText='Username' style={this.styles.Divider} underlineShow={false} />
         <Divider />
-        <TextField hintText='Last name' style={this.styles.Divider} underlineShow={false} />
+        <TextField hintText='Password' style={this.styles.Divider} underlineShow={false} />
         <Divider />
-        <TextField hintText='Email address' style={this.styles.Divider} underlineShow={false} />
-        <Divider />
-        <TextField hintText='Email address' style={this.styles.Divider} underlineShow={false} />
         <Divider />
       </Paper>
     )
