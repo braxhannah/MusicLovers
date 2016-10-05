@@ -10,7 +10,7 @@ import spacing from 'material-ui/styles/spacing'
 class LoginPage extends Component {
 
   Submit = () => {
-    browserHistory.push('/MainPage')
+    browserHistory.push('/main/music')
   }
 
   styles = {

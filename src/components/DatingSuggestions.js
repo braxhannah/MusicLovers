@@ -5,14 +5,8 @@ import IconButton from 'material-ui/IconButton'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
-import { woman1 } from '../images'
-import { woman2 } from '../images'
-import { woman3 } from '../images'
-import { woman4 } from '../images'
-import { musician1 } from '../images'
-import { musician2 } from '../images'
-import { musician3 } from '../images'
-import { saxophone } from '../images'
+
+import genres from '../data'
 
 class DatingSuggestions extends Component {
 
@@ -37,88 +31,6 @@ class DatingSuggestions extends Component {
       display: 'flex',
       justifyContent: 'stretch',
       alignItems: 'stretch'
-    }
-  }
-
-  genres = {
-    rock: {
-      title: 'Rock and Roll',
-      people: [
-        {
-          img: woman1,
-          title: 'Jenny',
-          author: 'Punk Rock',
-          about: 'Chilling at the bar',
-          bands: 'Green Day and Dropkick Murphys',
-          instruments: 'Hollow Body Guitar'
-        },
-        {
-          img: woman2,
-          title: 'Caroline',
-          author: 'Punk',
-          about: 'Folk punk for life',
-          bands: 'Judah and The Lion, Johnny Hobo',
-          instruments: 'Banjo'
-        },
-        {
-          img: musician1,
-          title: 'Victoria',
-          author: 'Rock',
-          about: 'Swinging and Rocking',
-          bands: 'All That Remains, All American Rejects',
-          instruments: 'Fender Strat'
-        },
-        {
-          img: woman3,
-          title: 'Lisa',
-          author: 'Rock',
-          about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
-        }
-      ]
-    },
-    pop: {
-      title: 'Pop & Top 40',
-      people: [
-        {
-          img: musician2,
-          title: 'Victoria',
-          author: 'Pop',
-          about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Major Lazer, Shawn Mendes',
-          instruments: 'None'
-        },
-        {
-          img: woman4,
-          title: 'Lisa',
-          author: 'Top 40',
-          about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Justin Timberlake, The Chainsmokers',
-          instruments: 'Piano'
-        }
-      ]
-    },
-    emo: {
-      title: 'Emo & Crabcore',
-      people: [
-        {
-          img: musician3,
-          title: 'Brett',
-          author: 'Emo',
-          about: 'Mosh Pits for life',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Les Paul Guitar'
-        },
-        {
-          img: saxophone,
-          title: 'Malory',
-          author: 'Crabcore',
-          about: 'Enjoys Head banging to songs',
-          bands: 'Metalica',
-          instruments: 'Electric Guitar'
-        }
-      ]
     }
   }
 
@@ -147,8 +59,8 @@ class DatingSuggestions extends Component {
             value={this.state.genre}
             onChange={this.selectGenre}
           >
-            {Object.keys(this.genres).map((key) => {
-              return <MenuItem value={key} primaryText={this.genres[key].title} key={key} />
+            {Object.keys(genres).map((key) => {
+              return <MenuItem value={key} primaryText={genres[key].title} key={key} />
             })}
           </SelectField>
         </div>
@@ -158,14 +70,14 @@ class DatingSuggestions extends Component {
             padding={0}
             style={this.styles.gridList}
           >
-            {this.genres[this.state.genre].people.map((tile) => (
+            {genres[this.state.genre].people.map((tile) => (
               <GridTile
                 key={tile.img}
                 title={tile.title}
                 subtitle={<span><b>{tile.author}</b></span>}
                 actionIcon={<IconButton><StarBorder color='white' /></IconButton>}
           >
-                <img onTouchTap={() => { this.props.sendDate(tile); browserHistory.push('/UserProfile') }} src={tile.img} />
+                <img onTouchTap={() => { browserHistory.push('/UserProfile/' + tile.id) }} src={tile.img} />
               </GridTile>
         ))}
           </GridList>

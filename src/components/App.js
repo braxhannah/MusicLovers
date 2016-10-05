@@ -5,6 +5,8 @@ import MainFooter from './MainFooter'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import { browserHistory } from 'react-router'
 
+import { logo } from '../images'
+
 class App extends Component {
 
   static propTypes = {
@@ -29,6 +31,13 @@ class App extends Component {
       flex: '1',
       display: 'flex',
       width: '100%'
+    },
+    title: {
+      backgroundImage: `url(${logo})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '100px',
+      backgroundPosition: 'center',
+      color: 'transparent'
     }
   }
 
@@ -47,7 +56,17 @@ class App extends Component {
   }
 
   handleMenuHome = (event) => {
-    browserHistory.push('/MainPage')
+    browserHistory.push('/main/music')
+    this.closeDrawer()
+  }
+
+  handleMenuLovers = (event) => {
+    browserHistory.push('/main/lovers')
+    this.closeDrawer()
+  }
+
+  handleMenuMusic = (event) => {
+    browserHistory.push('/main/music')
     this.closeDrawer()
   }
 
@@ -67,7 +86,7 @@ class App extends Component {
         <div className='app' style={this.styles.app}>
           <AppBar
             title='Music Lovers'
-            titleStyle={{ textAlign: 'center', marginLeft: '-48px' }}
+            titleStyle={this.styles.title}
             onLeftIconButtonTouchTap={this.openDrawer}
           />
           <main style={this.styles.main}>
@@ -80,6 +99,8 @@ class App extends Component {
             docked={false}
           >
             <MenuItem onTouchTap={this.handleMenuHome}>Home</MenuItem>
+            <MenuItem onTouchTap={this.handleMenuMusic}>Music</MenuItem>
+            <MenuItem onTouchTap={this.handleMenuLovers}>Lovers</MenuItem>
             <MenuItem onTouchTap={this.handleMenulogout}>Logout</MenuItem>
           </Drawer>
         </div>

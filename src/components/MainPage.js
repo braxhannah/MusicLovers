@@ -36,27 +36,18 @@ class MainPage extends Component {
     }
   }
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      value: 'concert'
-    }
-  }
-
   handleChange = (value) => {
-    this.setState({
-      value: value
-    })
+    browserHistory.push('/main/' + value)
   };
 
   render () {
     return (
       <div style={this.styles.backgroundPicture}>
-        <Tabs value={this.state.value} onChange={this.handleChange}>
-          <Tab label='Concerts' value='concert' style={{height: '100%'}} >
+        <Tabs value={this.props.params.tab} onChange={this.handleChange}>
+          <Tab label='Music' value='music' style={{height: '100%'}} >
             <ConcertSuggestions />
           </Tab>
-          <Tab label='Dating' value='dating' style={{height: '100%'}} >
+          <Tab label='Lovers' value='lovers' style={{height: '100%'}} >
             <DatingSuggestions sendDate={this.props.sendDate} currentDate={this.props.currentDate} />
           </Tab>
         </Tabs>

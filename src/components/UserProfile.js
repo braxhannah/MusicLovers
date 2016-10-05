@@ -7,19 +7,34 @@ import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem'
 
+import data from '../data.js'
+
 class UserProfile extends Component {
 
   constructor (props) {
     super(props)
+    console.log(data, props.params.id)
+    const person = Object.values(data).reduce((p, g) => p.concat(g.people), []).find(p => String(p.id) === props.params.id)
     this.state = {
-      open: false
+      open: false,
+      invited: false,
+      inviteTo: null,
+      message: '',
+      currentDate: person
     }
   }
 
   handleTouchTap = () => {
-    this.setState({
-      open: true
-    })
+    const accept = `${this.state.currentDate.title} accepted your invite to ${this.state.inviteTo}.`
+    const decline = `${this.state.currentDate.title} turned down your invite to ${this.state.inviteTo}.`
+    this.setState({ invited: true })
+    setTimeout(() => {
+      this.setState({
+        open: true,
+        invited: false,
+        message: (Math.random() >= 0.5) ? accept : decline
+      })
+    }, 3000)
   }
 
   handleRequestClose = () => {
@@ -28,67 +43,99 @@ class UserProfile extends Component {
     })
   }
 
-  styles = {
-    left: {
-      display: 'flex'
-    },
-    right: {
-      display: 'flex'
-    },
-    divider: {
-      marginLeft: '10px'
+  get styles () {
+    return {
+      main: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        width: '100%'
+      },
+      profile: {
+        display: 'flex',
+        flex: '1',
+        flexWrap: 'wrap',
+        justifyContent: 'stretch',
+        alignItems: 'stretch'
+      },
+      left: {
+        backgroundImage: `url(${this.state.currentDate.img})`,
+        backgroundSize: 'cover',
+        flex: '1',
+        minWidth: '200px',
+        minHeight: '300px'
+      },
+      right: {
+        flex: '1'
+      },
+      invites: {
+        padding: '1.5em',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-end'
+      },
+      divider: {
+        paddingLeft: '10px',
+        fontWeight: 'normal'
+      }
     }
+  }
+
+  handleChange = (event, index, value) => {
+    this.setState({ inviteTo: value })
   }
 
   render () {
     console.log('UserProps', this.props)
-    return (
-      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
-        <div className='topHalf' style={{display: 'flex', width: '100%'}}>
+    if (this.state.currentDate) {
+      return <div style={this.styles.main}>
+        <div style={this.styles.profile}>
           <div style={this.styles.left}>
-            <Paper zDepth={2}>
-              <img src={this.props.currentDate.img} />
-            </Paper>
           </div>
           <div style={this.styles.right}>
-            <p />
+            <h3 style={{marginLeft: '10px'}}> About Me</h3>
+            <h4 children={this.state.currentDate.about} style={this.styles.divider} />
+            <Divider />
+            <h3 style={{marginLeft: '10px'}}> Favorite Bands</h3>
+            <h4 children={this.state.currentDate.bands} style={this.styles.divider} />
+            <Divider />
+            <h3 style={{marginLeft: '10px'}}> Favorite Instrument</h3>
+            <h4 children={this.state.currentDate.instruments} style={this.styles.divider} />
           </div>
-          <Paper zDepth={2} style={{width: '100%'}}>
-            <h3 style={{marginLeft: '10px'}}> About Me </h3>
-            <TextField defaultValue={this.props.currentDate.about} style={this.styles.divider} underlineShow={false} />
-            <Divider />
-            <h3 style={{marginLeft: '10px'}}> Favorite Bands </h3>
-            <TextField defaultValue={this.props.currentDate.bands} style={this.styles.divider} underlineShow={false} />
-            <Divider />
-            <h3 style={{marginLeft: '10px'}}> Favorite Instrument </h3>
-            <TextField defaultValue={this.props.currentDate.instruments} style={this.styles.divider} underlineShow={false} />
-          </Paper>
         </div>
-        <div className='bottomHalf'>
-          <SelectField value={this.state.value} onChange={this.handleChange}>
-            <MenuItem value={1} primaryText='Pierce The Veil' />
-            <MenuItem value={2} primaryText='Sum 41' />
-            <MenuItem value={2} primaryText='Need to Breathe' />
-            <MenuItem value={2} primaryText='Dark Matter' />
-            <MenuItem value={2} primaryText='Finish Ticket' />
-            <MenuItem value={2} primaryText='The Summer Set' />
-
+        <div style={this.styles.invites}>
+          <SelectField
+            floatingLabelText={`Invite ${this.state.currentDate.title} to a concert...`}
+            value={this.state.inviteTo}
+            onChange={this.handleChange}
+            disabled={this.state.invited}
+          >
+            <MenuItem value='Pierce The Veil' primaryText='Pierce The Veil' />
+            <MenuItem value='Sum 41' primaryText='Sum 41' />
+            <MenuItem value='Need to Breathe' primaryText='Need to Breathe' />
+            <MenuItem value='Dark Matter' primaryText='Dark Matter' />
+            <MenuItem value='Finish Ticket' primaryText='Finish Ticket' />
+            <MenuItem value='The Summer Set' primaryText='The Summer Set' />
           </SelectField>
-          <div>
+          <div style={{marginLeft: '1.5em'}}>
             <RaisedButton
+              disabled={this.state.invited}
               onTouchTap={this.handleTouchTap}
               label='Invite'
               />
             <Snackbar
               open={this.state.open}
-              message='Invite Accepted!'
+              message={this.state.message}
               autoHideDuration={4000}
               onRequestClose={this.handleRequestClose}
               />
           </div>
         </div>
       </div>
-      )
+    } else {
+      return <h2>Profile Not Found</h2>
+    }
   }
-  }
+}
+
 export default UserProfile

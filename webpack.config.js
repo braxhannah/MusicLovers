@@ -10,11 +10,13 @@ const BUILD_PATH = path.resolve(ROOT_PATH, 'build')
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     SOURCE_PATH
   ],
   output: {
     filename: 'bundle.js',
-    path: BUILD_PATH
+    path: BUILD_PATH,
+    publicPath: '/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
