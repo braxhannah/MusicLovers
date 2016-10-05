@@ -12,7 +12,8 @@ class MainFooter extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       padding: spacing.desktopGutter,
-      display: 'flex'
+      display: 'flex',
+      marginLeft: '48px'
     },
     link: {
       color: grey900,

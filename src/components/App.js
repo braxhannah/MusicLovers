@@ -67,7 +67,7 @@ class App extends Component {
         <div className='app' style={this.styles.app}>
           <AppBar
             title='Music Lovers'
-            titleStyle={{ textAlign: 'center' }}
+            titleStyle={{ textAlign: 'center', marginLeft: '-48px' }}
             onLeftIconButtonTouchTap={this.openDrawer}
           />
           <main style={this.styles.main}>
