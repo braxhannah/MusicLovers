@@ -39,22 +39,34 @@ class DatingSuggestions extends Component {
         {
           img: 'src/images/woman-977020_640.jpg',
           title: 'Jenny',
-          author: 'Punk Rock'
+          author: 'Punk Rock',
+          about: 'I enjoy hanging out at my local bar and listening to 90s punk',
+          bands: 'Green Day and Dropkick Murphys',
+          instruments: 'Hollow Body Guitar'
         },
         {
           img: 'src/images/woman-1476320_640.jpg',
           title: 'Caroline',
-          author: 'Heavy Metal'
+          author: 'Heavy Metal',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         },
         {
           img: 'src/images/musician-1209073_640.jpg',
           title: 'Victoria',
-          author: 'Pop'
+          author: 'Pop',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         },
         {
           img: 'src/images/woman-1535795_640.jpg',
           title: 'Lisa',
-          author: 'Pop'
+          author: 'Pop',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         }
       ]
     },
@@ -64,12 +76,18 @@ class DatingSuggestions extends Component {
         {
           img: 'src/images/musician-1209073_640.jpg',
           title: 'Victoria',
-          author: 'Pop'
+          author: 'Pop',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         },
         {
           img: 'src/images/woman-1535795_640.jpg',
           title: 'Lisa',
-          author: 'Pop'
+          author: 'Pop',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         }
       ]
     },
@@ -79,12 +97,18 @@ class DatingSuggestions extends Component {
         {
           img: 'src/images/musician-664432_640.jpg',
           title: 'Brett',
-          author: 'EDM'
+          author: 'EDM',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         },
         {
           img: 'src/images/saxophone-1561556_640.jpg',
           title: 'Malory',
-          author: 'Emo'
+          author: 'Emo',
+          about: 'I enjoy jamming out to Rock on the weekends',
+          bands: 'Safety Suit, Taking Back Sunday',
+          instruments: 'Violin'
         }
       ]
     }
@@ -96,6 +120,10 @@ class DatingSuggestions extends Component {
     this.state = {
       genre: 'rock'
     }
+  }
+
+  static propTypes = {
+    sendDate: React.PropTypes.func
   }
 
   selectGenre = (event, index, value) => {
@@ -129,7 +157,7 @@ class DatingSuggestions extends Component {
                 subtitle={<span><b>{tile.author}</b></span>}
                 actionIcon={<IconButton><StarBorder color='white' /></IconButton>}
           >
-                <img onTouchTap={() => { browserHistory.push('/UserProfile') }} src={tile.img} />
+                <img onTouchTap={() => { this.props.sendDate(tile); browserHistory.push('/UserProfile') }} src={tile.img} />
               </GridTile>
         ))}
           </GridList>
@@ -140,8 +168,3 @@ class DatingSuggestions extends Component {
 }
 
 export default DatingSuggestions
-
-// onTouchTap={this.profileSelect}
-// profileSelect = () => {
-// browserHistory.push('/UserProfile')
-// }

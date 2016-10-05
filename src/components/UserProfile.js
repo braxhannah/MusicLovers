@@ -29,49 +29,42 @@ class UserProfile extends Component {
   }
 
   styles = {
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'stretch',
-      alignItems: 'stretch'
+    left: {
+      display: 'flex'
     },
-    leftTopHalf: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: '0.5em 0',
-      backgroundColor: 'white'
+    right: {
+      display: 'flex'
     },
-    rightTopHalf: {
-      display: 'flex',
-      justifyContent: 'stretch',
-      alignItems: 'stretch'
+    divider: {
+      marginLeft: '10px'
     }
   }
 
   render () {
+    console.log('UserProps', this.props)
     return (
-      <div>
-        <div className='topHalf'>
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+        <div className='topHalf' style={{display: 'flex', width: '100%'}}>
           <div style={this.styles.left}>
             <Paper zDepth={2}>
-              <img src='src/images/woman-977020_640.jpg' />
+              <img src={this.props.currentDate.img} />
             </Paper>
           </div>
           <div style={this.styles.right}>
             <p />
           </div>
-          <Paper zDepth={2}>
-            <h3> About Me </h3>
-            <TextField defaultValue='' style={this.styles.Divider} underlineShow={false} />
+          <Paper zDepth={2} style={{width: '200%'}}>
+            <h3 style={{marginLeft: '10px'}}> About Me </h3>
+            <TextField defaultValue={this.props.currentDate.about} style={this.styles.divider} underlineShow={false} />
             <Divider />
-            <h3> Favorite Bands </h3>
-            <TextField defaultValue='Favorite Bands' style={this.styles.Divider} underlineShow={false} />
+            <h3 style={{marginLeft: '10px'}}> Favorite Bands </h3>
+            <TextField defaultValue={this.props.currentDate.bands} style={this.styles.divider} underlineShow={false} />
             <Divider />
-            <h3> Favorite Instrument </h3>
-            <TextField defaultValue='Favorite Instrument' style={this.styles.Divider} underlineShow={false} />
+            <h3 style={{marginLeft: '10px'}}> Favorite Instrument </h3>
+            <TextField defaultValue={this.props.currentDate.instruments} style={this.styles.divider} underlineShow={false} />
           </Paper>
-          <div className='bottomHalf'>
+          </div>
+        <div className='bottomHalf'>
             <SelectField value={this.state.value} onChange={this.handleChange}>
               <MenuItem value={1} primaryText='Never' />
               <MenuItem value={2} primaryText='Every Night' />
@@ -90,7 +83,6 @@ class UserProfile extends Component {
             </div>
           </div>
         </div>
-      </div>
       )
   }
   }

@@ -57,7 +57,7 @@ class MainPage extends Component {
             <ConcertSuggestions />
           </Tab>
           <Tab label='Dating' value='dating' style={{height: '100%'}} >
-            <DatingSuggestions />
+            <DatingSuggestions sendDate={this.props.sendDate} currentDate={this.props.currentDate} />
           </Tab>
         </Tabs>
       </div>

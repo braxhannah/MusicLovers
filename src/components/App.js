@@ -14,7 +14,8 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      drawerOpen: false
+      drawerOpen: false,
+      currentDate: {}
     }
   }
 
@@ -55,7 +56,12 @@ class App extends Component {
     this.closeDrawer()
   }
 
+  sendDate = (date) => {
+    this.setState({currentDate: date})
+  }
+
   render () {
+    console.log('I am props', this.props.children)
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className='app' style={this.styles.app}>
@@ -65,7 +71,7 @@ class App extends Component {
             onLeftIconButtonTouchTap={this.openDrawer}
           />
           <main style={this.styles.main}>
-            {this.props.children}
+            {this.props.children && React.cloneElement(this.props.children, {sendDate: this.sendDate, currentDate: this.state.currentDate})}
           </main>
           <MainFooter />
           <Drawer
