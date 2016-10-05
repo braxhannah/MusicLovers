@@ -129,7 +129,7 @@ class DatingSuggestions extends Component {
                 subtitle={<span><b>{tile.author}</b></span>}
                 actionIcon={<IconButton><StarBorder color='white' /></IconButton>}
           >
-                <img src={tile.img} />
+                <img onTouchTap={() => { browserHistory.push('/UserProfile') }} src={tile.img} />
               </GridTile>
         ))}
           </GridList>
