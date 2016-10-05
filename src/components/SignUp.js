@@ -22,6 +22,8 @@ class SignUp extends Component {
       flex: '1',
       backgroundImage: 'url(' + headphones + ')',
       backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
       overflow: 'hidden'
     },
     Divider: {

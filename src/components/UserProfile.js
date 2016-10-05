@@ -53,7 +53,7 @@ class UserProfile extends Component {
           <div style={this.styles.right}>
             <p />
           </div>
-          <Paper zDepth={2} style={{width: '200%'}}>
+          <Paper zDepth={2} style={{width: '100%'}}>
             <h3 style={{marginLeft: '10px'}}> About Me </h3>
             <TextField defaultValue={this.props.currentDate.about} style={this.styles.divider} underlineShow={false} />
             <Divider />
