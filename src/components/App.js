@@ -89,6 +89,3 @@ class App extends Component {
 }
 
 export default App
-
-// <MenuItem onTouchTap={this.handleMenu}>Home</MenuItem>
-// <MenuItem onTouchTap={this.handleMenu}>Selections</MenuItem>
