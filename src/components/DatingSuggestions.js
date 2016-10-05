@@ -5,6 +5,14 @@ import IconButton from 'material-ui/IconButton'
 import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
+import { woman1 } from '../images'
+import { woman2} from '../images'
+import { woman3 } from '../images'
+import { woman4 } from '../images'
+import {musician1} from '../images'
+import {musician2} from '../images'
+import {musician3} from '../images'
+import {saxophone} from '../images'
 
 class DatingSuggestions extends Component {
 
@@ -37,7 +45,7 @@ class DatingSuggestions extends Component {
       title: 'Rock and Roll',
       people: [
         {
-          img: 'src/images/woman-977020_640.jpg',
+          img: woman1,
           title: 'Jenny',
           author: 'Punk Rock',
           about: 'I enjoy hanging out at my local bar and listening to 90s punk',
@@ -45,7 +53,7 @@ class DatingSuggestions extends Component {
           instruments: 'Hollow Body Guitar'
         },
         {
-          img: 'src/images/woman-1476320_640.jpg',
+          img: woman2,
           title: 'Caroline',
           author: 'Heavy Metal',
           about: 'I enjoy jamming out to Rock on the weekends',
@@ -53,7 +61,7 @@ class DatingSuggestions extends Component {
           instruments: 'Violin'
         },
         {
-          img: 'src/images/musician-1209073_640.jpg',
+          img: musician1,
           title: 'Victoria',
           author: 'Pop',
           about: 'I enjoy jamming out to Rock on the weekends',
@@ -61,7 +69,7 @@ class DatingSuggestions extends Component {
           instruments: 'Violin'
         },
         {
-          img: 'src/images/woman-1535795_640.jpg',
+          img: woman3,
           title: 'Lisa',
           author: 'Pop',
           about: 'I enjoy jamming out to Rock on the weekends',
@@ -74,7 +82,7 @@ class DatingSuggestions extends Component {
       title: 'Pop & Top 40',
       people: [
         {
-          img: 'src/images/musician-1209073_640.jpg',
+          img: musician2,
           title: 'Victoria',
           author: 'Pop',
           about: 'I enjoy jamming out to Rock on the weekends',
@@ -82,7 +90,7 @@ class DatingSuggestions extends Component {
           instruments: 'Violin'
         },
         {
-          img: 'src/images/woman-1535795_640.jpg',
+          img: woman4,
           title: 'Lisa',
           author: 'Pop',
           about: 'I enjoy jamming out to Rock on the weekends',
@@ -95,7 +103,7 @@ class DatingSuggestions extends Component {
       title: 'Emo & Crabcore',
       people: [
         {
-          img: 'src/images/musician-664432_640.jpg',
+          img: musician3,
           title: 'Brett',
           author: 'EDM',
           about: 'I enjoy jamming out to Rock on the weekends',
@@ -103,7 +111,7 @@ class DatingSuggestions extends Component {
           instruments: 'Violin'
         },
         {
-          img: 'src/images/saxophone-1561556_640.jpg',
+          img: saxophone,
           title: 'Malory',
           author: 'Emo',
           about: 'I enjoy jamming out to Rock on the weekends',
