@@ -12,8 +12,7 @@ class MainFooter extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       padding: spacing.desktopGutter,
-      display: 'flex',
-      marginLeft: '48px'
+      display: 'flex'
     },
     link: {
       color: grey900,
@@ -23,12 +22,14 @@ class MainFooter extends Component {
 
   render () {
     return <div style={this.styles.footer}>
+      <div style={{display: 'flex', marginLeft: '48px', justifyContent: 'center', alignItems: 'center'}}>
       &copy; 2016 &nbsp;
-      <Chip>
-        <Avatar src='https://avatars.githubusercontent.com/u/9198320' />
-        <a style={this.styles.link} href='https://github.com/braxhannah'>BraxOnBraxOnBrax</a>
-      </Chip>
+        <Chip>
+          <Avatar src='https://avatars.githubusercontent.com/u/9198320' />
+          <a style={this.styles.link} href='https://github.com/braxhannah'>BraxOnBraxOnBrax</a>
+        </Chip>
       &nbsp; All rights reserved.
+      </div>
     </div>
   }
 }

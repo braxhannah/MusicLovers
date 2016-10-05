@@ -16,6 +16,7 @@ class SignUp extends Component {
   styles = {
     main: {
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       flex: '1',
