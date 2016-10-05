@@ -6,13 +6,13 @@ import SelectField from 'material-ui/SelectField'
 import MenuItem from 'material-ui/MenuItem'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import { woman1 } from '../images'
-import { woman2} from '../images'
+import { woman2 } from '../images'
 import { woman3 } from '../images'
 import { woman4 } from '../images'
-import {musician1} from '../images'
-import {musician2} from '../images'
-import {musician3} from '../images'
-import {saxophone} from '../images'
+import { musician1 } from '../images'
+import { musician2 } from '../images'
+import { musician3 } from '../images'
+import { saxophone } from '../images'
 
 class DatingSuggestions extends Component {
 
@@ -48,30 +48,30 @@ class DatingSuggestions extends Component {
           img: woman1,
           title: 'Jenny',
           author: 'Punk Rock',
-          about: 'I enjoy hanging out at my local bar and listening to 90s punk',
+          about: 'Chilling at the bar',
           bands: 'Green Day and Dropkick Murphys',
           instruments: 'Hollow Body Guitar'
         },
         {
           img: woman2,
           title: 'Caroline',
-          author: 'Heavy Metal',
-          about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
+          author: 'Punk',
+          about: 'Folk punk for life',
+          bands: 'Judah and The Lion, Johnny Hobo',
+          instruments: 'Banjo'
         },
         {
           img: musician1,
           title: 'Victoria',
-          author: 'Pop',
-          about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
+          author: 'Rock',
+          about: 'Swinging and Rocking',
+          bands: 'All That Remains, All American Rejects',
+          instruments: 'Fender Strat'
         },
         {
           img: woman3,
           title: 'Lisa',
-          author: 'Pop',
+          author: 'Rock',
           about: 'I enjoy jamming out to Rock on the weekends',
           bands: 'Safety Suit, Taking Back Sunday',
           instruments: 'Violin'
@@ -86,16 +86,16 @@ class DatingSuggestions extends Component {
           title: 'Victoria',
           author: 'Pop',
           about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
+          bands: 'Major Lazer, Shawn Mendes',
+          instruments: 'None'
         },
         {
           img: woman4,
           title: 'Lisa',
-          author: 'Pop',
+          author: 'Top 40',
           about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
+          bands: 'Justin Timberlake, The Chainsmokers',
+          instruments: 'Piano'
         }
       ]
     },
@@ -105,18 +105,18 @@ class DatingSuggestions extends Component {
         {
           img: musician3,
           title: 'Brett',
-          author: 'EDM',
-          about: 'I enjoy jamming out to Rock on the weekends',
+          author: 'Emo',
+          about: 'Mosh Pits for life',
           bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
+          instruments: 'Les Paul Guitar'
         },
         {
           img: saxophone,
           title: 'Malory',
-          author: 'Emo',
-          about: 'I enjoy jamming out to Rock on the weekends',
-          bands: 'Safety Suit, Taking Back Sunday',
-          instruments: 'Violin'
+          author: 'Crabcore',
+          about: 'Enjoys Head banging to songs',
+          bands: 'Metalica',
+          instruments: 'Electric Guitar'
         }
       ]
     }

@@ -9,8 +9,6 @@ import { darkMatter } from '../images'
 import { finishTicket } from '../images'
 import { theSummerSet } from '../images'
 
-
-
 class ConcertSuggestions extends Component {
 
   render () {

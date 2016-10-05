@@ -63,26 +63,31 @@ class UserProfile extends Component {
             <h3 style={{marginLeft: '10px'}}> Favorite Instrument </h3>
             <TextField defaultValue={this.props.currentDate.instruments} style={this.styles.divider} underlineShow={false} />
           </Paper>
-          </div>
+        </div>
         <div className='bottomHalf'>
-            <SelectField value={this.state.value} onChange={this.handleChange}>
-              <MenuItem value={1} primaryText='Never' />
-              <MenuItem value={2} primaryText='Every Night' />
-            </SelectField>
-            <div>
-              <RaisedButton
-                onTouchTap={this.handleTouchTap}
-                label='Invite'
+          <SelectField value={this.state.value} onChange={this.handleChange}>
+            <MenuItem value={1} primaryText='Pierce The Veil' />
+            <MenuItem value={2} primaryText='Sum 41' />
+            <MenuItem value={2} primaryText='Need to Breathe' />
+            <MenuItem value={2} primaryText='Dark Matter' />
+            <MenuItem value={2} primaryText='Finish Ticket' />
+            <MenuItem value={2} primaryText='The Summer Set' />
+
+          </SelectField>
+          <div>
+            <RaisedButton
+              onTouchTap={this.handleTouchTap}
+              label='Invite'
               />
-              <Snackbar
-                open={this.state.open}
-                message='Invite Accepted!'
-                autoHideDuration={4000}
-                onRequestClose={this.handleRequestClose}
+            <Snackbar
+              open={this.state.open}
+              message='Invite Accepted!'
+              autoHideDuration={4000}
+              onRequestClose={this.handleRequestClose}
               />
-            </div>
           </div>
         </div>
+      </div>
       )
   }
   }
