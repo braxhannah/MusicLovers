@@ -3,7 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { AppBar, Drawer, MenuItem } from 'material-ui'
 import MainFooter from './MainFooter'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import { browserHistory } from 'react-router'
 
 class App extends Component {
 
@@ -45,13 +45,19 @@ class App extends Component {
     })
   }
 
-  handleMenu = (event) => {
+  handleMenuHome = (event) => {
+    browserHistory.push('/MainPage')
+    this.closeDrawer()
+  }
+
+  handleMenulogout = () => {
+    browserHistory.push('/')
     this.closeDrawer()
   }
 
   render () {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className='app' style={this.styles.app}>
           <AppBar
             title='Music Lovers'
@@ -67,8 +73,8 @@ class App extends Component {
             onRequestChange={this.changeDrawer}
             docked={false}
           >
-            <MenuItem onTouchTap={this.handleMenu}>Home</MenuItem>
-            <MenuItem onTouchTap={this.handleMenu}>Selections</MenuItem>
+            <MenuItem onTouchTap={this.handleMenuHome}>Home</MenuItem>
+            <MenuItem onTouchTap={this.handleMenulogout}>Logout</MenuItem>
           </Drawer>
         </div>
       </MuiThemeProvider>
@@ -77,3 +83,6 @@ class App extends Component {
 }
 
 export default App
+
+// <MenuItem onTouchTap={this.handleMenu}>Home</MenuItem>
+// <MenuItem onTouchTap={this.handleMenu}>Selections</MenuItem>

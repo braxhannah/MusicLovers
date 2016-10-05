@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import { RaisedButton } from 'material-ui'
 import spacing from 'material-ui/styles/spacing'
-
-let imgUrl = 'src/images/flute-1427652_1920.jpg'
+import { headphones } from '../images'
 
 class MainBody extends Component {
 
@@ -15,11 +14,11 @@ class MainBody extends Component {
   }
 
   signIn = () => {
-    browserHistory.push('/MainPage')
+    browserHistory.push('/LoginPage')
   }
 
   signUp = () => {
-    browserHistory.push('/UserInput')
+    browserHistory.push('/SignUp')
   }
 
   styles = {
@@ -28,7 +27,7 @@ class MainBody extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       flex: '1',
-      backgroundImage: 'url(' + imgUrl + ')',
+      backgroundImage: 'url(' + headphones + ')',
       backgroundSize: 'cover',
       overflow: 'hidden'
     },
@@ -40,7 +39,7 @@ class MainBody extends Component {
   render () {
     return (
       <div style={this.styles.main}>
-        <RaisedButton label='Sign In' onTouchTap={this.signIn} primary style={this.styles.button} />
+        <RaisedButton label='Login' onTouchTap={this.signIn} primary style={this.styles.button} />
         <RaisedButton label='Sign Up' onTouchTap={this.signUp} secondary style={this.styles.button} />
       </div>
     )

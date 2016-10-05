@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import '../styles/mainpage.sass'
 import { browserHistory } from 'react-router'
-import { RaisedButton } from 'material-ui'
 import spacing from 'material-ui/styles/spacing'
 import { Tabs, Tab } from 'material-ui/Tabs'
 import DatingSuggestions from './DatingSuggestions'
 import ConcertSuggestions from './ConcertSuggestions'
-
-let imgUrl = 'src/images/concerts-1150042_1280.jpg'
+import { headphones } from '../images'
 
 class MainPage extends Component {
 
@@ -20,7 +18,7 @@ class MainPage extends Component {
       width: '100vw'
     },
     backgroundPicture: {
-      backgroundImage: 'url(' + imgUrl + ')',
+      backgroundImage: 'url(' + headphones + ')',
       backgroundSize: 'cover',
       overflow: 'hidden'
     },
@@ -53,39 +51,18 @@ class MainPage extends Component {
 
   render () {
     return (
-      <Tabs value={this.state.value} styles={this.styles.backgroundPicture} onChange={this.handleChange}>
-        <Tab label='Concert Suggestions' value='concert' >
-          <ConcertSuggestions />
-        </Tab>
-        <Tab label='Dating Suggestions' value='dating' >
-          <DatingSuggestions />
-        </Tab>
-      </Tabs>
+      <div style={this.styles.backgroundPicture}>
+        <Tabs value={this.state.value} onChange={this.handleChange}>
+          <Tab label='Concerts' value='concert' style={{height: '100%'}} >
+            <ConcertSuggestions />
+          </Tab>
+          <Tab label='Dating' value='dating' style={{height: '100%'}} >
+            <DatingSuggestions />
+          </Tab>
+        </Tabs>
+      </div>
     )
   }
 }
 
 export default MainPage
-
-// <div style={this.styles.main}>
-//   <RaisedButton label='Concert Suggestions' onTouchTap={this.concertLoad} backgroundColor='green' style={this.styles.button} />
-//   <RaisedButton label='Dating Suggestions' onTouchTap={this.datingLoad} backgroundColor='purple' style={this.styles.button} />
-// </div>
-
-  // background-image: url('../images/pexels-photo.jpg')
-  // background-image: image('../images/pexels-photo.jpg')
-
-// <div className='userChoices'>
-//   <div className='choicesContainer'>
-//     <Link to='/DatingSuggestions'>
-//       <button className='datingButton'>
-//         Dating
-//       </button>
-//     </Link>
-//     <Link to='/ConcertSuggestions'>
-//       <button className='concertButton'>
-//         Concerts
-//       </button>
-//     </Link>
-//   </div>
-// </div>
