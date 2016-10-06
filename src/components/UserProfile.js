@@ -116,6 +116,13 @@ class UserProfile extends Component {
             <MenuItem value='Dark Matter' primaryText='Dark Matter' />
             <MenuItem value='Finish Ticket' primaryText='Finish Ticket' />
             <MenuItem value='The Summer Set' primaryText='The Summer Set' />
+            <MenuItem value='Bad Religion and Against Me!' primaryText='Bad Religion and Against Me!' />
+            <MenuItem value='Carrie Underwood' primaryText='Carrie Underwood' />
+            <MenuItem value='Trivium' primaryText='Trivium' />
+            <MenuItem value='Beartooth' primaryText='Beartooth' />
+            <MenuItem value='Kesha and The Creepies' primaryText='Kesha and The Creepies' />
+            <MenuItem value='Pennywise' primaryText='Pennywise' />
+            <MenuItem value='Switchfoot and Relient K' primaryText='Switchfoot and Relient K' />
           </SelectField>
           <div style={{marginLeft: '1.5em'}}>
             <RaisedButton

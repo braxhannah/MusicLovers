@@ -8,6 +8,13 @@ import { needToBreathe } from '../images'
 import { darkMatter } from '../images'
 import { finishTicket } from '../images'
 import { theSummerSet } from '../images'
+import { badReligion } from '../images'
+import { beartooth } from '../images'
+import { carrieUnderwood } from '../images'
+import { kesha } from '../images'
+import { pennywise } from '../images'
+import { switchfoot } from '../images'
+import { trivium } from '../images'
 
 class ConcertSuggestions extends Component {
 
@@ -87,6 +94,97 @@ class ConcertSuggestions extends Component {
         </CardMedia>
         <CardActions>
           <a href='http://www.ticketmaster.com/the-summer-set-made-for-you-tampa-florida-10-11-2016/event/0D005112DBABA248?artistid=1485424&majorcatid=10001&minorcatid=60'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Bad Religion and Against Me!'
+        />
+        <CardMedia>
+          <img src={badReligion} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/the-vox-populi-tour-2016-bad-st-petersburg-florida-10-12-2016/event/0D0050E78DF37396?artistid=734491&majorcatid=10001&minorcatid=60&tm_link=artist_msg-0_0D0050E78DF37396&ab=reloaded'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Carrie Underwood'
+        />
+        <CardMedia>
+          <img src={carrieUnderwood} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/carrie-underwood-the-storyteller-tour-tampa-florida-11-16-2016/event/0D0050760915AC8E?artistid=1004122&majorcatid=10001&minorcatid=2&tm_link=artist_msg-0_0D0050760915AC8E&ab=reloaded'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Trivium'
+        />
+        <CardMedia>
+          <img src={trivium} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/trivium-st-petersburg-florida-10-18-2016/event/0D0050EC86A3700E?artistid=962593&majorcatid=10001&minorcatid=1&ab=reloaded'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Beartooth'
+        />
+        <CardMedia>
+          <img src={beartooth} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/the-noise-presents-beartooth-the-aggressive-st-petersburg-florida-10-21-2016/event/0D0050E8A56B84AB?artistid=1836474&majorcatid=10001&minorcatid=200&ab=reloaded'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Kesha and The Creepies'
+        />
+        <CardMedia>
+          <img src={kesha} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/kesha-and-the-creepies-the-fck-tampa-florida-10-25-2016/event/0D00512FAB21995B?artistid=1413109&majorcatid=10001&minorcatid=1&ab=reloaded'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Pennywise'
+        />
+        <CardMedia>
+          <img src={pennywise} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/siriusxms-faction-presents-pennywise-playing-tampa-florida-10-27-2016/event/0D0050CFE165BAE9?artistid=741706&majorcatid=10001&minorcatid=60&ab=reloaded'>
+            <FlatButton label='Tickets' />
+          </a>
+        </CardActions>
+      </Card>
+      <Card>
+        <CardHeader
+          title='Switchfoot and Relient K'
+        />
+        <CardMedia>
+          <img src={switchfoot} />
+        </CardMedia>
+        <CardActions>
+          <a href='http://www.ticketmaster.com/switchfoot-relient-k-looking-st-petersburg-florida-11-04-2016/event/0D0050ACF777B4A8?artistid=790118&majorcatid=10001&minorcatid=1&ab=reloaded'>
             <FlatButton label='Tickets' />
           </a>
         </CardActions>
