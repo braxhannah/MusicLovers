@@ -10,7 +10,7 @@ import { headphones } from '../images'
 class SignUp extends Component {
 
   Submit = () => {
-    browserHistory.push('/MainPage')
+    browserHistory.push('/main/music')
   }
 
   styles = {
