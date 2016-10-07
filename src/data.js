@@ -128,21 +128,7 @@ export default {
       }
     ]
   },
-  folk: {
-    title: 'Folk & Core',
-    people: [
-      {
-        id: 12,
-        img: guy7,
-        title: 'Mace',
-        author: 'Scremo',
-        about: 'Slapping the Bass on Stage',
-        bands: 'My Chemical Romance, A.D.T.R.',
-        instruments: 'Bass Guitar'
-      }
-    ]
-  },
-  EDM: {
+  edm: {
     title: 'Aggrotech & CrustPunk',
     people: [
       {
