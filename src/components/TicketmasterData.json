@@ -1,43 +1,44 @@
-EDM: {
-title: 'Aggrotech & CrustPunk',
-people: [
-  {
-    id: 1,
-    img: woman5,
-    title: 'Judice',
-    author: 'Electo',
-    about: 'Chilling at the bar',
-    bands: 'Tritonal, Yogi'
-    instruments: 'synthesizer keyboard'
-  },
-  {
-    id: 2,
-    img: guy10,
-    title: 'Duke',
-    author: 'Dubstep',
-    about: 'DJ for life',
-    bands: 'Deadmau5',
-    instruments: 'Turntables'
-  },
-  {
-    id: 2,
-    img: guy1,
-    title: 'Blain',
-    author: 'Crunk',
-    about: 'DJ for life',
-    bands: 'Deadmau5',
-    instruments: 'Turntables'
-},
-{
-  id: 2,
-  img: guy10,
-  title: 'Giana',
-  author: 'Dubstep',
-  about: 'DJ for life',
-  bands: 'Deadmau5',
-  instruments: 'Turntables'
-}
-
+  EDM: {
+    title: 'Aggrotech & CrustPunk',
+    people: [
+      {
+        id: 13,
+        img: woman5,
+        title: 'Judice',
+        author: 'Electo',
+        about: 'Chilling at the bar',
+        bands: 'Tritonal, Yogi'
+        instruments: 'Synthesizer'
+      },
+      {
+        id: 14,
+        img: guy10,
+        title: 'Duke',
+        author: 'Dubstep',
+        about: 'DJ for life',
+        bands: 'Deadmau5',
+        instruments: 'Turntables'
+      },
+      {
+        id: 15,
+        img: guy1,
+        title: 'Blain',
+        author: 'Crunk',
+        about: 'DJ for life',
+        bands: 'Deadmau5',
+        instruments: 'Turntables'
+      },
+      {
+        id: 16,
+        img: guy8,
+        title: 'Giana',
+        author: 'Dubstep',
+        about: 'DJ for life',
+        bands: 'Deadmau5',
+        instruments: 'Turntables'
+      }
+    ]
+  }
 
 
 
@@ -71,3 +72,21 @@ people: [
         bands: 'Green Day and Dropkick Murphys',
         instruments: 'Hollow Body Guitar'
       },
+
+
+
+//
+      folk: {
+        title: 'Folk & Core',
+        people: [
+          {
+            id: 12,
+            img: guy7,
+            title: 'Mace',
+            author: 'Scremo',
+            about: 'Slapping the Bass on Stage',
+            bands: 'My Chemical Romance, A.D.T.R.',
+            instruments: 'Bass Guitar'
+          }
+        ]
+      }
